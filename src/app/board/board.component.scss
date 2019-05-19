@@ -1,0 +1,42 @@
+:host {
+  display: grid;
+  cursor: pointer;
+}
+
+.cell {
+  position: relative;
+  background-color: #f3f3f3;
+  border: 1px solid black;
+}
+
+.piece {
+    height: 95%;
+    width: 95%;
+    left: 2.5%;
+    top: 2.5%;
+    position: relative;
+    border-radius: 50%;
+}
+
+[piece='2'] {
+  background-color: red;
+}
+
+[piece='1'] {
+  background-color: black;
+}
+
+.winning-mark-1,
+.winning-mark-2 {
+  position: absolute;
+  left: 45%;
+  top: 15%;
+  height: 70%;
+  width: 10%;
+  transform: rotate(45deg);
+  background-color: white;
+}
+
+.winning-mark-2 {
+  transform: rotate(-45deg);
+}

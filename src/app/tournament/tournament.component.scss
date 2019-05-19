@@ -1,0 +1,65 @@
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 0 0 auto;
+    height: 70vh;
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    justify-content: space-around;
+}
+
+.footer {
+    flex: 0 0 auto;
+    height: calc(30vh - 16px);
+    width: 100%;
+    overflow: scroll;
+}
+
+app-board {
+    width: 70vw;
+    height: 60vw;
+    max-width: 81.6vh;
+    max-height: 70vh;
+}
+
+app-tournament-controls,
+.right-spacer {
+    flex: 1 1 0;
+    max-width: 230px;
+}
+
+.player-scores {
+    display: flex;
+    flex-direction: row;
+}
+
+.last-error {
+    border: solid 1px gray;
+    padding: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: red;
+    font-size: 12px;
+}
+
+.last-error-title {
+    font-size: 24px;
+    text-align: center;
+}
+
+
+app-player-score {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+app-results-table {
+    width: 100%;
+    tbody {
+        overflow:scroll;
+    }
+}

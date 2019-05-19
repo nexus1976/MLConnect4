@@ -1,0 +1,20 @@
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+.exhibition-controls-container {
+    border: solid gray 1px;
+    padding: 5px;
+}
+
+.new-game {
+    width: 100%;
+    height: 30px;
+    background-color: #2171b3;
+    color: white;
+}
+
+.played-moves input {
+  max-width: 120px;
+}

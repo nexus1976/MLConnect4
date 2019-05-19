@@ -1,0 +1,16 @@
+<table>
+    <tr>
+        <th>Winner</th>
+        <th>Black Player</th>
+        <th>Starting Moves</th>
+        <th>Played Moves</th>
+        <th>Error</th>
+    </tr>
+    <tr *ngFor="let result of results">
+        <td>{{result.playerOneWon ? result.playerOneName : result.playerTwoWon ? result.playerTwoName : result.endedFromError ? 'Error' : 'Draw'}}</td>
+        <td>{{result.isPlayerOneBlack ? result.playerOneName : result.playerTwoName }}</td>
+        <td>{{result.startingMoves}}</td>
+        <td>{{result.playedMoves}}</td>
+        <td>{{result.error}}</td>
+    </tr>
+</table>

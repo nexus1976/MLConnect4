@@ -1,0 +1,29 @@
+<div class="exhibition-controls-container">
+  <button (click)="newGame()" class="new-game">New Game</button>
+  <div>
+    Starting Position:
+    <textarea rows="3"
+      #startPos
+      ></textarea>
+  </div>
+</div>
+<div class="exhibition-controls-container">
+  <app-player-selector
+    [title]="'Black Player'"
+    (playerSelected)='updatePlayer(Color.Black, $event)'
+  ></app-player-selector>
+</div>
+<div class="exhibition-controls-container">
+    <app-player-selector
+    [title]="'Red Player'"
+    (playerSelected)='updatePlayer(Color.Red, $event)'
+  ></app-player-selector>
+</div>
+<div class="exhibition-controls-container played-moves">
+  <div>Played Moves:</div>
+  <textarea rows="3">{{playedMoves$ | async}}</textarea>
+</div>
+<div class="exhibition-controls-container">
+  <div>Game State:</div>
+  <div>{{gameState$ | async}}</div>
+</div>

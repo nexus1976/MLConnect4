@@ -1,0 +1,21 @@
+<div class="tournament-controls-container">
+  <button (click)="newGame()" class="new-game">Start Tournament</button>
+</div>
+<div class="tournament-controls-container">
+  Number of Games: <input #numberOfGames value="20">
+</div>
+<div class="tournament-controls-container">
+  Opening Book Start Idx: <input #openBookStartIdx value="0">
+</div>
+<div class="tournament-controls-container">
+  <app-player-selector
+    [title]="'Player One'"
+    (playerSelected)="updatePlayer(PlayerNumber.PlayerOne, $event)"
+  ></app-player-selector>
+</div>
+<div class="tournament-controls-container">
+  <app-player-selector
+    [title]="'Player Two'"
+    (playerSelected)="updatePlayer(PlayerNumber.PlayerTwo, $event)"
+  ></app-player-selector>
+</div>

@@ -1,0 +1,17 @@
+<ng-container *ngFor="let column of columnCells; index as ci">
+  <div
+    *ngFor="let piece of rowCells; index as ri"
+    class="cell"
+    [style.grid-column]="ci + 1"
+    [style.grid-row]="ri + 1"
+    (click)="onCellClicked(ci + 1, rowCells.length - ri)">
+    <div
+      class="piece"
+      [attr.piece]="(gameState.boardState[ci][rowCells.length - ri - 1] || 'none').toString()">
+    </div>
+    <ng-container *ngIf="isWinningPiece(gameState.winningPieces, ci + 1,rowCells.length - ri)">
+      <div class="winning-mark-1"></div>
+      <div class="winning-mark-2"></div>
+    </ng-container>
+  </div>
+</ng-container>

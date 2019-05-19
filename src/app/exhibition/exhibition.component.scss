@@ -1,0 +1,19 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    justify-content: space-around;
+}
+
+app-board {
+    width: 70vw;
+    height: 60vw;
+    max-width: 95vh;
+    max-height: 81.4vh;
+}
+
+app-exhibition-controls,
+.right-spacer {
+    flex: 1 1 0;
+    max-width: 230px;
+}

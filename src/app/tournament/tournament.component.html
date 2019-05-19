@@ -1,0 +1,36 @@
+<div class="content">
+    <app-tournament-controls
+        (newGameRequested)="startTournament($event)"
+        (playerUpated)="updatePlayer($event)"
+    ></app-tournament-controls>
+    <app-board
+        [playedMoves]='playedMoves$ | async'
+    ></app-board>
+
+    <div class="right-spacer">
+        <div class="player-scores">
+            <app-player-score
+                [playerName]="playerOneName$ | async"
+                [playerIsBlack]="playerOneIsBlack$ | async"
+                [score]="playerOneScore$ | async"
+                [winner]="playerOneWon$ | async"
+            ></app-player-score>
+            <app-player-score
+                [playerName]="playerTwoName$ | async"
+                [playerIsBlack]="!(playerOneIsBlack$ | async)"
+                [score]="playerTwoScore$ | async"
+                [winner]="playerTwoWon$ | async"
+                ></app-player-score>
+        </div>
+        <div *ngIf="lastError" class="last-error">
+            <div class="last-error-title">Last Error:</div>
+            <div class="last-error-error">{{ lastError }}</div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <app-results-table
+        [results]="gameResults$ | async"
+    ></app-results-table>
+</div>

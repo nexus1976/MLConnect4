@@ -1,0 +1,12 @@
+<div>{{ title }}</div>
+<select
+  #playerType
+  (change)="updatePlayer(playerType.value, host?.value)">
+  <option value="human">Human</option>
+  <option value="api" selected="selected">Api</option>
+</select>
+<input *ngIf="playerType.value == 'api'" type="text"
+  #host
+  value="http://localhost:5000/api"
+  (paste)="updatePlayer(playerType.value, host?.value)"
+  (keyup)="updatePlayer(playerType.value, host?.value)">
